@@ -87,7 +87,10 @@ def get_message(message):
         else:
             bot.reply_to(message, "Sorry, I don't know what to "
                                   "say\U0001F622")
-        write_pass(password)
+        try:
+            write_pass(password)
+        except UnboundLocalError:
+            pass
 
 
 if __name__ == '__main__':
